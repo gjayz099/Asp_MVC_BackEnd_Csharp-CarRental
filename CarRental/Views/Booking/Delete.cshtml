@@ -1,0 +1,57 @@
+﻿@model CarRental.Models.Booking
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="All-Header">
+    <div class="All-Content">
+        <h3 class="text-white mt-5">Booking Delete</h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center my-5">
+        <div class="col-lg-10">
+            <h1 class="text-center fst-italic">Delete Booking</h1>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.BookingCarModel)
+                </dt>
+                <dd class="col-sm-2">
+                    @Html.DisplayFor(model => model.BookingCarModel)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.BookingFName)
+                </dt>
+                <dd class="col-sm-2">
+                    @Html.DisplayFor(model => model.BookingFName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.BookingLName)
+                </dt>
+                <dd class="col-sm-2">
+                    @Html.DisplayFor(model => model.BookingLName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.BookingPhoneNum)
+                </dt>
+                <dd class="col-sm-2">
+                    @Html.DisplayFor(model => model.BookingPhoneNum)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.PickUpDate)
+                </dt>
+                <dd class="col-sm-2">
+                    @Html.DisplayFor(model => model.PickUpDate)
+                </dd>
+            </dl>
+            <form asp-action="Delete" class="d-flex justify-content-between px-4">
+                <input type="hidden" asp-for="BookingID" />
+                <input type="submit" value="Delete" class="btn btn-danger w-25" />
+                <a class="btn btn-secondary w-25" asp-action="Index">Back</a>
+            </form>
+        </div>
+    </div>
+</div>

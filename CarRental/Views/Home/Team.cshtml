@@ -1,0 +1,37 @@
+﻿@model IEnumerable<CarRental.Models.NormalClass.TeamItem>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Team";
+}
+<div class="All-Header">
+    <div class="All-Content">
+        <h3 class="text-white mt-5">Team</h3>
+    </div>
+</div>
+<section>
+    <div class="container">
+        <h1 class="content text-center mt-5 fst-italic">Our Team</h1>
+        <div class="row my-5">
+        @foreach(var ItemTeam in Model)
+        {
+            var TeamPath = "../img/comp/" + (ItemTeam.TeamImgName) + ".jpg";
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="item-team my-3 mx-auto">
+                        <img src="@TeamPath" alt="img" />
+                        <div class="Team-soc">
+                            <a href="@ItemTeam.TeamFbLinks"><i class="bx bxl-facebook"></i></a>
+                            <a href="@ItemTeam.TeamTtLinks"><i class='bx bxl-twitter'></i></a>
+                            <a href="@ItemTeam.TeamWaLinks"><i class='bx bxl-whatsapp'></i></a>
+                        </div>
+                        <div class="Team-name-pos">
+                            <h5>@ItemTeam.TeamPosition</h5>
+                            <h4>@ItemTeam.TeamFullName</h4>
+                        </div>
+                    </div>
+                </div>
+        }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,71 @@
+﻿@model CarRental.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="All-Header">
+    <div class="All-Content">
+        <h3 class="text-white mt-5">Employee Add</h3>
+    </div>
+</div>
+
+<div class="container my-5">
+    <h1 class="text-center fst-italic">Add Employee</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row my-2">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label asp-for="EmployeeFName" class="control-label"></label>
+                            <input asp-for="EmployeeFName" class="form-control" />
+                            <span asp-validation-for="EmployeeFName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label asp-for="EmployeeLName" class="control-label"></label>
+                            <input asp-for="EmployeeLName" class="form-control" />
+                            <span asp-validation-for="EmployeeLName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label asp-for="EmployeePhoneNum" class="control-label"></label>
+                            <input asp-for="EmployeePhoneNum" class="form-control" />
+                            <span asp-validation-for="EmployeePhoneNum" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label asp-for="EmployeeSalary" class="control-label"></label>
+                            <input asp-for="EmployeeSalary" class="form-control" />
+                            <span asp-validation-for="EmployeeSalary" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label asp-for="JoinDate" class="control-label"></label>
+                            <input asp-for="JoinDate" class="form-control" />
+                            <span asp-validation-for="JoinDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-between my-3">
+                    <input type="submit" value="Create" class="w-25 btn btn-primary" />
+                    <a class="w-25 btn btn-secondary" asp-action="Index">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

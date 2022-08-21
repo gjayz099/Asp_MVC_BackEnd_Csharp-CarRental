@@ -1,0 +1,151 @@
+﻿@model IEnumerable<CarRental.Models.NormalClass.BlogItem>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<header>
+    <div class="d-grid align-self-center h-content">
+        <h1>Easy Rent The Car</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit Repudianda explicabo iste labore id est quas.</p>
+        <div class="header-btn">
+            <a asp-action="Create">Rent</a>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="container">
+        <h1 class="content text-center mt-5 fst-italic">About</h1>
+        <div class="row align-items-center mt-3">
+            <div class="img-feature col-lg-5 order-lg-2 p-4  text-center m-auto">
+                <img src="./img/comp/feature_01.png" alt="" />
+            </div>
+            <div class="text-feature col-lg-5 order-lg-1 p-4 m-auto">
+                <h2>Welcome To G-Car Rent</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, explicabo iste a labore id est quas, doloremque veritatis! Provident odit pariatur dolorem quisquam, voluptatibus voluptates optio accusamus, vel quasi quidem!</p>
+                <a asp-action="About" class="btn btn-transparent w-25">About</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h1 class="content text-center mt-5 fst-italic">Our Blog</h1>
+        <div class="row align-items-center m-auto">
+            @foreach ( var Itemsblog in Model)
+            {
+            var TeamPath = "./img/comp/" + (Itemsblog.BlogPicTittle) + ".jpg";
+
+            <div class="col-sm-12 col-md-6 col-xl-3 my-5">
+                <div class="Blog-item">
+                    <img src="@TeamPath" alt="img" />
+                    <div class="d-flex justify-content-between pb-2 mx-2">
+                        <h5>@Itemsblog.BlogName</h5>
+                        <h5>@Itemsblog.BlogDate <span>Admin</span></h5>
+                    </div>
+                    <p class="fst-italic mx-2">@Itemsblog.BlogPrap</p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+<section>
+    <div class="item-about">
+
+    </div>
+</section>
+<section>
+    <div class="container works">
+        <h1 class="content text-center mt-5 fst-italic">How it works</h1>
+        <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur illum nam vitae recusandae blanditiis <br>esse voluptatem obcaecati, quibusdam nostrum!</p>
+        <div class="how-it-works d-flex my-5 justify-content-center">
+            <div class="step">
+                <span class="number"><span>01</span></span>
+                <span class="caption">Time &amp; Place</span>
+            </div>
+            <div class="step">
+                <span class="number"><span>02</span></span>
+                <span class="caption">Car</span>
+            </div>
+            <div class="step">
+                <span class="number"><span>03</span></span>
+                <span class="caption">Details</span>
+            </div>
+            <div class="step">
+                <span class="number"><span>04</span></span>
+                <span class="caption">Checkout</span>
+            </div>
+            <div class="step">
+                <span class="number"><span>05</span></span>
+                <span class="caption">Done</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h1 class="content text-center my-4 fst-italic">Testimonial</h1>
+        <div id="carouselExampleSlidesOnly" class="carousel slide my-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-between mx-5">
+                        <div class="m-auto text-center item-car">
+                            <img src="./img/comp/tespic.jpg" />
+                            <h5 class="my-3">Client Name</h5>
+                            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias recusandae inventore eius.</p>
+                        </div>
+                        <div class="m-auto text-center item-car">
+                            <img src="./img/comp/tespic.jpg" />
+                            <h5 class="my-3">Client Name</h5>
+                            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias recusandae inventore eius.</p>
+                        </div>
+                        <div class="m-auto text-center item-car">
+                            <img src="./img/comp/tespic.jpg" />
+                            <h5 class="my-3">Client Name</h5>
+                            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias recusandae inventore eius.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-between mx-5">
+                        <div class="m-auto text-center item-car">
+                            <img src="./img/comp/tespic.jpg" />
+                            <h5 class="my-3">Client Name</h5>
+                            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias recusandae inventore eius.</p>
+                        </div>
+                        <div class="m-auto text-center item-car">
+                            <img src="./img/comp/tespic.jpg" />
+                            <h5 class="my-3">Client Name</h5>
+                            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias recusandae inventore eius.</p>
+                        </div>
+                        <div class="m-auto text-center item-car">
+                            <img src="./img/comp/tespic.jpg" />
+                            <h5 class="my-3">Client Name</h5>
+                            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias recusandae inventore eius.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-between mx-5">
+                        <div class="m-auto text-center item-car">
+                            <img src="./img/comp/tespic.jpg" />
+                            <h5 class="my-3">Client Name</h5>
+                            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias recusandae inventore eius.</p>
+                        </div>
+                        <div class="m-auto text-center item-car">
+                            <img src="./img/comp/tespic.jpg" />
+                            <h5 class="my-3">Client Name</h5>
+                            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias recusandae inventore eius.</p>
+                        </div>
+                        <div class="m-auto text-center item-car">
+                            <img src="./img/comp/tespic.jpg" />
+                            <h5 class="my-3">Client Name</h5>
+                            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias recusandae inventore eius.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

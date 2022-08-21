@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GCarRental</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CarRental.styles.css" asp-append-version="true" />
+    @*========= Boxicon ================*@
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+     <nav class="main-nav navbar navbar-expand-sm navbar-light fixed-top py-1">
+         <div class="container">
+             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GCarRental</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                     aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item text-center">
+                         <a class="nav-link text-dark mx-2" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                     </li>
+                     <li class="nav-item text-center">
+                         <a class="nav-link text-dark mx-2" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a>
+                     </li>
+                     <li class="nav-item text-center">
+                         <a class="nav-link text-dark mx-2" asp-area="" asp-controller="Home" asp-action="Service">Service</a>
+                     </li>
+                     <li class="nav-item text-center">
+                         <a class="nav-link text-dark mx-2" asp-area="" asp-controller="Home" asp-action="Team">Team</a>
+                     </li>
+                     <li class="nav-item text-center">
+                         <a class="nav-link text-dark mx-2" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                     </li>
+                     @if(User.Identity.IsAuthenticated)
+                     {
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown text-center">
+                                <a class="nav-link dropdown-toggle text-dark mx-2" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Admin
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Employee" asp-action="Index">Employee</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Car" asp-action="Index">Car</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Booking" asp-action="Index">Booking</a></li>
+                                </ul>
+                            </li>
+                        }
+                     }
+                    
+                     
+                 </ul>
+                 <partial name="_LoginPartial" />
+             </div>
+         </div>
+     </nav>
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content pt-4 pb-3">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-6 mb-2">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">GCarRental</a>
+                            </div>
+                            <div class="footer-text">
+                                <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                                    elit,Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 mb-2">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <div class="links row">
+                                <a class="col-6 text-white">Home</a>
+                                <a class="col-6 text-white">About</a>
+                                <a class="col-6 text-white">Pricing</a>
+                                <a class="col-6 text-white">Services</a>
+                                <a class="col-6 text-white">Team</a>
+                                @*<a class="col-6">Admin</a>*@
+                            </div>
+                        </div>
+                        <div class="footer-social-icon pt-2">
+                            <h5>Follow us</h5>
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram'></i></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 mb-2">
+                        <div class="footer-widget">
+                            <h3>Address</h3>
+                            <div class="single-cta">
+                                <div class="cta-text">
+                                    <i class='bx bxs-map'></i>
+                                    <span>8111 Purok 8 Communal Davao city, Davao del sur, Philipines</span>
+                                </div>
+                            </div>
+                            <div class="single-cta">
+                                <div class="cta-text">
+                                    <i class='bx bxs-phone'></i>
+                                    <span>+639456715856</span>
+                                </div>
+                            </div>
+                            <div class="single-cta">
+                                <div class="cta-text">
+                                    <i class='bx bxs-envelope'></i>
+                                    <span>suport@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 mb-2">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Subscribe</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            </div>
+                            <div class="subscribe-form">
+                                <form>
+                                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                                   @* <button><i class="fab fa-telegram-plane"></i></button>*@
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 col-lg-12 text-center text-lg-left">
+                        <p>Copyright &copy; 2022, All Right Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

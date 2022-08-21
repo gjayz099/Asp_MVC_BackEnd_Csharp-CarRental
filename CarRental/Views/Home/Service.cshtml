@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CarRental.Models.NormalClass.ServiceItem>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Service";
+}
+<div class="All-Header">
+    <div class="All-Content">
+        <h3 class="text-white mt-5">Service</h3>
+    </div>
+</div>
+<section>
+    <div class="container">
+        <h1 class="content text-center my-5 fst-italic">Service</h1>
+        <div class="row">
+        @foreach(var ItemService in Model)
+        {
+            var ServicePath = "../img/comp/" + (ItemService.ServiceIcon) + ".png";
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="iconimg-service m-auto">
+                    <img src="@ServicePath" alt="img" />
+                </div>
+                <div class="Service-text text-center">
+                    <h1>@ItemService.ServiceName</h1>
+                    <p class="m-auto mb-5 fst-italic">@ItemService.ServicePar</p>
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+</section>

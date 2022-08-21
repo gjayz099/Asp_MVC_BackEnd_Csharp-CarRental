@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&display=swap');
+/*==Defult Css==*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --maincolor: #479aff;
+    --whitecolor: #ffffff;
+    --blackcolor: #000000;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+section{
+    width: 100%;
+    height: auto;
+}
+/*== Navbar ==*/
+.main-nav {
+    background: var(--maincolor);
+}
+.main-nav .navbar-brand{
+    font-style: italic;
+    font-weight: 900;
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+}
+/*====== Home ======*/
+header {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("../img/comp/header-pic.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+
+}
+.h-content{
+    margin-left: 30px;
+}
+.h-content h1{
+    font-size: 45px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--whitecolor)
+}
+.h-content p{
+    font-size: 15px;
+    font-style: italic;
+    color: var(--whitecolor)
+}
+.header-btn a {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--blackcolor);
+    background: var(--maincolor);
+    width: auto;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    overflow: visible;
+    width: 100%;
+    height: 100px;
+    z-index: 0;
+    transform: skewY(3deg);
+    background-color: var(--whitecolor)
+}
+.text-feature{
+    margin: auto;
+}
+.text-feature a{
+    background-color: var(--maincolor)
+}
+.img-feature{
+    margin: 40px 0;
+    z-index: 3;
+}
+.Blog-item h5{
+    padding-top: 25px;
+    font-size: 15px;
+}
+.Blog-item h5 span {
+    color: var(--maincolor)
+}
+.item-about {
+    background: radial-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("../img/comp/pic-item.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 35vh;
+    width: 100%;
+}
+.content {
+    font-size: 25px;
+    color: var(--maincolor);
+}
+
+.how-it-works .step {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+.how-it-works .step {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+.how-it-works .step .number {
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--maincolor);
+    background: #fff;
+    border-radius: 100%;
+    color: var(--secondcolor);
+    position: relative;
+    display: block;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 25px;
+}
+.item-car img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+@media (max-width: 1003px){
+    .carousel-item div .item-car:nth-child(1){
+        display: none;
+    }
+}
+@media (max-width: 563px) {
+    .carousel-item div .item-car:nth-child(1), 
+    .carousel-item div .item-car:nth-child(2) {
+        display: none;
+    }
+}
+/*=========== All Header =============*/
+.All-Header {
+    background: radial-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url("../img/comp/header-pic.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 40vh;
+    display: grid;
+}
+.All-Content{
+    display: grid;
+    align-self: center;
+    justify-content: center;
+}
+.All-Content h3{
+    font-size: 40px;
+    text-transform: uppercase;
+}
+/*=========== Pricing ============*/
+.rental-item {
+    background: #efefef;
+    box-shadow: 0px 2px 0px 0px #0c0c0c49;
+}
+.img-car {
+    padding: 20px;
+}
+.img-car img{
+    height: 200px
+}
+.car_name_brand h6{
+    font-size: 25px;
+    font-weight: 700;
+}
+.car_name_brand h6:nth-child(1){
+    color: var(--maincolor)
+}
+.icons-pricing {
+    padding-top: 10px;
+    display: flex;
+    gap: 35px;
+    margin: auto;
+    justify-content: center;
+    text-align: center; 
+}
+.icon-pricing {
+    background: var(--maincolor);
+    width: 70px;
+    height: 60px;
+    text-align: center;
+    padding-top: 7px;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 13px
+}
+.price-car h6{
+    font-size: 14px;
+}
+.btn-pricing {
+    margin: 15px;
+    text-align: center;
+}
+.btn-pricing a{
+    cursor: pointer;
+    padding: 10px 100px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-style: italic;
+    border-radius: 5px;
+    color: var(--blackcolor)
+}
+.btn-pricing .text-Yes{
+    background: var(--maincolor);
+}
+.btn-pricing .text-No{
+    background: #ff0101;
+}
+/*=========== Service =============*/
+.iconimg-service img {
+    width: 90px;
+    height: 80px;
+    background: var(--maincolor);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px
+}
+.Service-text h1{
+    font-size: 20px;
+}
+/*=========== Team =========*/
+.item-team {
+    width: 310px;
+    background: var(--maincolor);
+    position: relative;
+}
+.item-team img{
+    width: 310px;
+    padding: 5px
+}
+.Team-soc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+}
+.Team-soc a .bx{
+    margin: 0 20px;
+    font-size: 25px;
+    color: var(--whitecolor);
+    background: var(--blackcolor);
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+.item-team:hover .Team-soc {
+    bottom: 90px;
+}
+.Team-name-pos {
+    position: absolute;
+    bottom: 0px;
+    padding: 5px 0;
+    left: 0;
+    right: 0;
+    background: var(--maincolor);
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+}
+.Team-name-pos h5{
+    font-size: 15px;
+}
+.Team-name-pos h4{
+    font-size: 18px;
+}
+.Team-soc a .bxl-facebook:hover {
+    background: #4267B2;
+}
+.Team-soc a .bxl-twitter:hover {
+    background: #1DA1F2;
+}
+.Team-soc a .bxl-whatsapp:hover {
+    background: #128C7E;
+}
+/*========== About ===========*/
+.ItemAbout{
+    width: 90%;
+    margin: auto;
+}
+.ItemAbout h1{
+    color: var(--maincolor);
+    font-size: 25px;
+}
+.btn-about{
+    background: var(--maincolor);
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: var(--blackcolor);
+    cursor: pointer; 
+    transition: 0.5s ease-in-out;
+}
+.btn-about:hover{
+    color: var(--blackcolor);
+    background: #479affcc;
+}
+/*========= Footer ===========*/
+.footer-section {
+    background: radial-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url("../img/comp/footer-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--whitecolor);
+}
+.footer-logo a {
+    font-style: italic;
+    font-weight: 900;
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+    font-size: 30px;
+}
+.copyright-area {
+    background: var(--maincolor);
+}
+.footer-social-icon a .bx{
+    font-size: 35px;
+    color: var(--whitecolor)
+}

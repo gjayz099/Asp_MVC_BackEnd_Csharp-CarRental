@@ -1,0 +1,68 @@
+﻿@model IEnumerable<CarRental.Models.Booking>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="All-Header">
+    <div class="All-Content">
+        <h3 class="text-white mt-5">Booking List</h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center my-5">
+        <div class="col-lg-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BookingCarModel)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BookingFName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BookingLName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BookingPhoneNum)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PickUpDate)
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BookingCarModel)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BookingFName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BookingLName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BookingPhoneNum)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PickUpDate)
+                            </td>
+                            <td>
+                                <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.BookingID">Edit</a> 
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.BookingID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

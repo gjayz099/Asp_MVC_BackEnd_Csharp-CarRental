@@ -1,0 +1,68 @@
+﻿@model IEnumerable<CarRental.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="All-Header">
+    <div class="All-Content">
+        <h3 class="text-white mt-5">Employee List</h3>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeFName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeLName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeePhoneNum)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeSalary)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.JoinDate)
+                        </th>
+                        <th>
+                            <a class="btn btn-primary w-50" asp-action="Create">Create</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeFName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeLName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeePhoneNum)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeSalary)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.JoinDate)
+                            </td>
+                            <td>
+                                <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.EmployeeID">Edit</a>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.EmployeeID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
